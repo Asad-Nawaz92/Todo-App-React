@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+body{
+  background-color: #D6DBB2;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.app-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+
+.add-button, .delete-button {
+  padding: 10px 15px;
+  font-size: 1em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-button {
+  background-color: #28a745;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.add-button:hover {
+  background-color: #218838;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.items-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.item h2 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
 }
