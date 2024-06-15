@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import Swal from "sweetalert2";
+import Header from "./components/Header";
+import Input from "./components/Input";
+import ItemList from "./components/ItemList";
 
 function App() {
   const [inputData, setInputData] = useState("");
@@ -23,18 +26,8 @@ function App() {
       );
       setItems(updatedItems);
       setEditIndex(null);
-      Swal.fire({
-        icon: "success",
-        title: "Success!",
-        text: "Todo updated successfully!",
-      });
     } else {
       setItems([...items, inputData]);
-      Swal.fire({
-        icon: "success",
-        title: "Success!",
-        text: "Todo added successfully!",
-      });
     }
     setInputData("");
   };
@@ -85,35 +78,15 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1 className="app-title">To-Do App</h1>
-      <div className="input-container">
-        <input
-          value={inputData}
-          onChange={(e) => setInputData(e.target.value)}
-          type="text"
-          placeholder="Enter your todo"
-          className="input-field"
-        />
-        <button onClick={addItem} className="add-button">
-          {editIndex !== null ? "Update Item" : "Add Item"}
-        </button>
-        <button onClick={deleteAll} className="delete-button">
-          Delete All
-        </button>
-      </div>
-      <div className="items-container">
-        {items.map((element, index) => (
-          <div key={index} className="item">
-            <h2>{element}</h2>
-            <button onClick={() => updateItem(index)} className="update-button">
-              Update
-            </button>
-            <button onClick={() => deleteItem(index)} className="delete-button">
-              Delete
-            </button>
-          </div>
-        ))}
-      </div>
+      <Header />
+      <Input
+        inputData={inputData}
+        setInputData={setInputData}
+        addItem={addItem}
+        editIndex={editIndex}
+        deleteAll={deleteAll}
+      />
+      <ItemList items={items} updateItem={updateItem} deleteItem={deleteItem} />
     </div>
   );
 }
