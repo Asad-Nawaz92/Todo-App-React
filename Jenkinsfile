@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git url: 'https://github.com/Asad-Nawaz92/Todo-App-React', branch: 'master'
             }
         }
         stage('Setup') {
             steps {
-                bat 'npm install -g netlify-cli'  
+                bat 'npm install -g netlify-cli'
             }
         }
         stage('Build') {
