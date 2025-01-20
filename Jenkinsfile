@@ -1,7 +1,12 @@
 pipeline {
     agent any
-    
+
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Setup') {
             steps {
                 bat 'npm install -g netlify-cli'  
