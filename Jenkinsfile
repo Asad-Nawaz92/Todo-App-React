@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'netlify deploy --dir=build --prod --auth %NETLIFY_AUTH_TOKEN% --message "Deployed from Jenkins"'
+                bat 'netlify deploy --dir=build --prod --auth nfp_5UzoqBZS1EiJ39vCv6ixy2FmUyoapKX47817 --message "Deployed from Jenkins"'
             }
         }
     }
