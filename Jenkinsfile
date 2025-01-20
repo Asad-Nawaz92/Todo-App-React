@@ -1,14 +1,6 @@
 pipeline {
     agent any
     
-    tools {
-        nodejs 'NodeJS'  // Use the name you configured in Global Tool Configuration
-    }
-    
-    environment {
-        NETLIFY_AUTH_TOKEN = credentials('nfp_hQi916Qxg9p2B6JBSZrF3ZCRLpSMcuATdeac')
-    }
-    
     stages {
         stage('Setup') {
             steps {
